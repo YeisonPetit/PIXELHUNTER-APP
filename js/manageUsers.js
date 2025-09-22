@@ -2,10 +2,10 @@
 const waitForSupabaseConfig = () => {
     return new Promise((resolve) => {
         if (window.supaConfig) {
-            console.log('✅ Supabase config cargado correctamente');
+            // console.log('✅ Supabase config cargado correctamente');
             resolve();
         } else {
-            console.log('⏳ Esperando configuración de Supabase...');
+            // console.log('⏳ Esperando configuración de Supabase...');
             setTimeout(() => waitForSupabaseConfig().then(resolve), 100);
         }
     });

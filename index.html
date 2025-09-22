@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="/public/pixerHunter.png" type="image/x-icon">
+    <title>PixelHunter</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">PixelHunter <i class="fa-solid fa-gamepad"></i></div>
+<input
+            type="text"
+            id="searchInput"
+            placeholder="SEARCH YOUR FAVORITE GAME..."
+          />
+          <div id="search-container" style="display: none">
+            <ul id="search-results">
+              <h1>Games:</h1>
+              <!-- Search results will be dynamically added here -->
+              
+            </ul>
+          </div>
+        <div class="user-info">
+          <img
+            id="user-avatar"
+            style="display: none"
+            alt="Avatar del usuario"
+          />
+
+          <div class="user-details">
+            <div id="user-name"></div>
+            <div id="user-email"></div>
+          </div>
+          
+          <button id="sign-out-btn" title="Cerrar Sesión">Salir</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="container">
+      <aside>
+  <ul>
+    <li><a href="#" onclick="loadAllGames()"> <h1>Home</h1></a></li>
+    <li><a href="#" onclick="loadReviews()"> <h1>Reviews</h1></a></li>
+
+    <li>
+      <a href="#"><i class="fa-solid fa-gift"></i> Wishlist</a>
+    </li>
+    
+    <h1>New Releases</h1>
+    <li><a href="#" onclick="loadThisMonth()"><i class="fa-solid fa-star"></i> Last 30 days</a></li>
+    <li><a href="#" onclick="loadThisWeek()"><i class="fa-solid fa-fire-flame-curved"></i> This week</a></li>
+    
+    <h1>Top</h1>
+    <li><a href="#" onclick="loadThisYear()"><i class="fa-solid fa-trophy"></i> Best Of The Year</a></li>
+    <li><a href="#" onclick="loadAllTime()"><i class="fa-solid fa-thumbs-up"></i> Most Popular</a></li>
+    <li><a href="#" onclick="loadAllTime()"><i class="fa-solid fa-star"></i> Top 250</a></li>
+    <hr>
+    
+    <li>
+      <a href="/html/404.html"><i class="fa-solid fa-user"></i> Profile</a>
+    </li>
+    <li>
+      <a href="#"><i class="fa-solid fa-cog"></i> Settings</a>
+    </li>
+  </ul>
+</aside>
+
+      <main>
+        <section id="content" class="main-content">
+          <h1>Top Picks</h1>
+          <div class="options">
+            <select id="genreSelect">
+              <option value="">All Genres</option>
+              <option value="Action">Action</option>
+              <option value="Adventure">Adventure</option>
+              <option value="RPG">RPG</option>
+              <option value="Strategy">Strategy</option>
+              <option value="Simulation">Simulation</option>
+              <option value="Sports">Sports</option>
+              <option value="Puzzle">Puzzle</option>
+              <option value="Horror">Horror</option>
+            </select>
+
+            <select id="sortSelect">
+              <option value="xbox-console">Xbox Console</option>
+              <option value="playstation-console">PlayStation Console</option>
+              <option value="pc">PC</option>
+              <option value="nintendo-console">Nintendo Console</option>
+              <option value="mobile">Mobile</option>
+              <option value="vr">VR</option>
+              <option value="all">All Platforms</option>
+            </select>
+            <!-- <button id="applyFiltersBtn">Apply Filters</button> -->
+            <div class="grid-template">
+              <button id="grid1Btn" title="1 Column"><i class="fa-regular fa-square-full"></i></button>
+              <button id="grid4Btn" title="4 Columns"><i class="fa-solid fa-border-all"></i></button>
+            </div>
+          </div>
+          <div class="games">
+            <ul id="gameList" class="gameList">
+              <!-- Game items will be dynamically added here -->
+            </ul>
+          </div>
+        </section>
+      </main><!-- Modal para detalles del juego -->
+<div id="gameModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="gameDetails">
+            <!-- Contenido dinámico del juego -->
+        </div>
+    </div>
+</div>
+
+      <!-- <footer>
+          <p>&copy; 2024 Your Company. All rights reserved.</p>
+      </footer> -->
+    </div>
+    
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="/js/manageUsers.js"></script>
+
+  </body>
+</html>
